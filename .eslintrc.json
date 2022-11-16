@@ -1,0 +1,116 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "es6": true
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "jest", "prettier"],
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    ".out",
+    "dist",
+    "build",
+    "node_modules",
+    "public",
+    "test"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"],
+        "moduleDirectory": ["src", "node_modules"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "no-inline-styles": true
+      },
+      {
+        "usePrettierrc": true,
+        "no-inline-styles": true
+      }
+    ],
+    "prefer-template": "error",
+    "react/jsx-handler-names": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unused-prop-types": "off",
+    "react/self-closing-comp": "error",
+    "react/forbid-component-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "propName": "style",
+            "message": "Use a prop sx ou crie um componente em atoms"
+          }
+        ]
+      }
+    ],
+    "react/forbid-dom-props": [
+      "error",
+      {
+        "forbid": [
+          {
+            "propName": "style",
+            "message": "Use a prop sx ou crie um componente em atoms"
+          }
+        ]
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "test/**/*.js",
+          "test/**/*.ts"
+        ]
+      }
+    ],
+    "import/no-named-as-default-member": "off",
+    "import/order": "error"
+  },
+  "globals": {
+    "localStorage": true,
+    "Given": true,
+    "When": true,
+    "Then": true,
+    "And": true
+  }
+}

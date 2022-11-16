@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "GothamBook";
+  src: local("GothamBook"), url("./assets/font/Gotham-Book.otf");
+}
+
+body {
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fafafa !important;
+  height: 100vh;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
